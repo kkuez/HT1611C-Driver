@@ -4,3 +4,6 @@ Code to drive old HT1611 Displays with arduino.
 Only 0-9, -, <SPACE>, F and P can be written.
   
 [Datasheet to display](http://ua4nx.qrz.ru/fail/HT1611.pdf)
+
+Connect like this:
+[Wiring](https://github.com/kkuez/HT1611C-Driver/blob/master/Schaltbild.png?raw=true)
