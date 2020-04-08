@@ -4,13 +4,18 @@ const int halfClockTime = 1;
 const int dataPin = 6;
 const int clockPin = 7;
 
+
+bool bitArray[4] = {false, false, false, false};
+int ticker = 0;
 bool active = true;
+char *lastMessage = " ";
 
 void writeStringToLCD(char *number);
 void pause();
 void getByteForChar(char inputChar, bool *incomingByte);
 void writeCharToLCD(char incomingChar);
-bool bitArray[4] = {false, false, false, false};
+void keepDisplayAlive();
+
 
 void setup() {
   //bytes to write are store in here
@@ -34,10 +39,20 @@ writeStringToLCD(stringToWrite)
     //writeStringToLCD("0-42FP111");
 
 digitalWrite(5, LOW);
-delay(5000);
+delay(200);
+  ticker += 200;
+  keepDisplayAlive();
 }
 
-
+void keepDisplayAlive(){
+if(ticker % 4000 > 3700){
+  Serial.println(lastMessage);
+  writeStringToLCD(lastMessage);
+  }
+  if(ticker > 60000){
+   ticker = 0;
+ }
+}
 
 void pause(){
   digitalWrite(clockPin, HIGH);
