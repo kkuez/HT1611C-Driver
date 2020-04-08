@@ -27,11 +27,11 @@ void loop() {
   // put your main code here, to run repeatedly:
 digitalWrite(5, HIGH);
 //10 digits
-//char stringToWrite[10] = "- P22"
-//writeStringToLCD(stringToWrite)
+char stringToWrite[10] = "- P22"
+writeStringToLCD(stringToWrite)
 
     
-    writeStringToLCD("0-42FP111");
+    //writeStringToLCD("0-42FP111");
 
 digitalWrite(5, LOW);
 delay(5000);
