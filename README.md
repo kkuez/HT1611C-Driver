@@ -7,3 +7,6 @@ Only 0-9, -, <SPACE>, F and P can be written.
 
 Connect like this:
 [Wiring](Schaltbild.png)
+
+Operating voltage: 
+1.2V - 1.7V
